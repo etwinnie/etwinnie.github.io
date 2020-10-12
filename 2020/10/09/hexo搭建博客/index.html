@@ -304,6 +304,13 @@
     </span>
 
   
+    <span id="/2020/10/09/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="post-meta-item leancloud_visitors" data-flag-title="hexo搭建博客(一) - 环境搭建" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
     <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
@@ -311,6 +318,20 @@
       <span class="post-meta-item-text">阅读次数：</span>
       <span id="busuanzi_value_page_pv"></span>
     </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/09/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/09/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -378,7 +399,7 @@
 </blockquote>
 <h2 id="下载hexo最新版本"><a href="#下载hexo最新版本" class="headerlink" title="下载hexo最新版本"></a>下载hexo最新版本</h2><h3 id="执行如下命令"><a href="#执行如下命令" class="headerlink" title="执行如下命令"></a>执行如下命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo@5</span><br></pre></td></tr></table></figure>
 <h3 id="no-such-file-or-directory-open-‘-Users-anna-package-json’"><a href="#no-such-file-or-directory-open-‘-Users-anna-package-json’" class="headerlink" title="no such file or directory, open ‘/Users/anna/package.json’"></a>no such file or directory, open ‘/Users/anna/package.json’</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#执行如下代码行即可，再重新安装包</span></span><br><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<h3 id="npmWARN"><a href="#npmWARN" class="headerlink" title="npmWARN"></a>npmWARN</h3><p>npm安装模块的 npm WARN <a href="mailto:&#x72;&#x6f;&#111;&#116;&#64;&#x31;&#x2e;&#48;&#x2e;&#x30;">&#x72;&#x6f;&#111;&#116;&#64;&#x31;&#x2e;&#48;&#x2e;&#x30;</a> No description 和 npm WARN <a href="mailto:&#x72;&#x6f;&#111;&#116;&#x40;&#49;&#46;&#48;&#46;&#48;">&#x72;&#x6f;&#111;&#116;&#x40;&#49;&#46;&#48;&#46;&#48;</a> No repository filed </p>
+<h3 id="npmWARN"><a href="#npmWARN" class="headerlink" title="npmWARN"></a>npmWARN</h3><p>npm安装模块的 npm WARN <a href="mailto:&#114;&#x6f;&#x6f;&#x74;&#64;&#x31;&#x2e;&#x30;&#46;&#x30;">&#114;&#x6f;&#x6f;&#x74;&#64;&#x31;&#x2e;&#x30;&#46;&#x30;</a> No description 和 npm WARN <a href="mailto:&#x72;&#x6f;&#x6f;&#x74;&#x40;&#x31;&#46;&#x30;&#46;&#x30;">&#x72;&#x6f;&#x6f;&#x74;&#x40;&#x31;&#46;&#x30;&#46;&#x30;</a> No repository filed </p>
 <p>解决办法：修改根目录下的package.json文件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;description&#x27;: &#x27;npm-install package&#x27;</span><br><span class="line">&#x27;private&#x27; = true</span><br></pre></td></tr></table></figure>
 
@@ -439,7 +460,7 @@
 
 
       
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -544,23 +565,15 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css">
-
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'c5a68edb4aaaee5296f7',
-      clientSecret: '92682b75f13cda9d178db0ba00e3cd65ed383d15',
-      repo        : 'blog-gitalk',
-      owner       : 'etwinnie',
-      admin       : ['etwinnie'],
-      id          : 'fcd00549083ebd4c1cb89466a306644d',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz","appKey":"RG34boH6ebkl76PpDLsYkyp7","serverURLs":null,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":["en","zh-CN"],"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[]}, {
+      el: '#valine-comments',
+      path: "/2020/10/09/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/",
+      serverURLs: "https://qdfgry9p.api.lncldglobal.com"
+    }));
+  }, window.Valine);
 });
 </script>
 

@@ -300,6 +300,13 @@
     </span>
 
   
+    <span id="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" class="post-meta-item leancloud_visitors" data-flag-title="hexo搭建博客(三) - 新建文档Markdown" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
     <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
@@ -307,6 +314,20 @@
       <span class="post-meta-item-text">阅读次数：</span>
       <span id="busuanzi_value_page_pv"></span>
     </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
         </div>
@@ -384,7 +405,7 @@
 
 
       
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -489,23 +510,15 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css">
-
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'c5a68edb4aaaee5296f7',
-      clientSecret: '92682b75f13cda9d178db0ba00e3cd65ed383d15',
-      repo        : 'blog-gitalk',
-      owner       : 'etwinnie',
-      admin       : ['etwinnie'],
-      id          : 'e1a51d20fc797e60380a88432e138b9c',
-        language: 'zh-CN',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz","appKey":"RG34boH6ebkl76PpDLsYkyp7","serverURLs":null,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":["en","zh-CN"],"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[]}, {
+      el: '#valine-comments',
+      path: "/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/",
+      serverURLs: "https://qdfgry9p.api.lncldglobal.com"
+    }));
+  }, window.Valine);
 });
 </script>
 
