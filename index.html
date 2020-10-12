@@ -199,13 +199,15 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -273,7 +275,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2020-10-12 17:09:13 / 修改时间：09:25:05" itemprop="dateCreated datePublished" datetime="2020-10-12T17:09:13+00:00">2020-10-12</time>
+      <time title="创建时间：2020-10-12 17:09:13 / 修改时间：09:37:51" itemprop="dateCreated datePublished" datetime="2020-10-12T17:09:13+00:00">2020-10-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,7 +283,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
         </span>
     </span>
 
@@ -322,21 +324,14 @@
 <li>Travis CI自动部署的log中提示WARN No layout<br><img src="https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg"></li>
 </ul>
 <p><strong>原因：</strong><br>因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。</p>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -rf themes/主题文件名</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git <span class="built_in">clone</span> -b master 主题</span><br><span class="line">git地址 themes/主题文件名rm -rf themes/主题文件名/.git</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png" alt="image.png"></p>
-<blockquote>
-<p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/reboot777/p/11164193.html">文件夹因存在.git而无法提交到git的解决办法</a></p>
-</blockquote>
-<h2 id="集成Valine评论问题"><a href="#集成Valine评论问题" class="headerlink" title="集成Valine评论问题"></a>集成Valine评论问题</h2><p>Next官方文档相对来说已经比较详细了，此处记录一下遇到过的坑。</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/third-party-services/comments.html#Valine">Next集成Valine评论系统</a></p>
-</blockquote>
-<h3 id="加载成功评论框，但无法提交"><a href="#加载成功评论框，但无法提交" class="headerlink" title="加载成功评论框，但无法提交"></a>加载成功评论框，但无法提交</h3><p><img src="https://i.loli.net/2020/10/12/y6eYsJk5MEx3fg9.png" alt="image.png"></p>
-<p><strong>解决方案：</strong><br>修改主题中的配置文件 _config.yml中Valine配置，增加url属性。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz</span> <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">RG34boH6ebkl76PpDLsYkyp7</span> <span class="comment"># Your leancloud application appkey</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="string">https://qdfgry9p.lc-cn-n1-shared.com</span>  <span class="comment"># When the custom domain name is enabled, fill it in here</span></span><br><span class="line">  <span class="comment"># 注意此处的url填写生成appId时候的url</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">lang:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">en</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span> </span><br><span class="line">    <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">enableQQ:</span> <span class="literal">true</span> <span class="comment"># Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar</span></span><br><span class="line">  <span class="attr">requiredFields:</span> [] <span class="comment"># Set required fields: [nick] | [nick, mail]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2020/10/12/94kdo6OqDWItGCA.png" alt="image.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
