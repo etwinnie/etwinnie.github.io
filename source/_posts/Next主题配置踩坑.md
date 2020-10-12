@@ -45,3 +45,10 @@ Next官方文档相对来说已经比较详细了，此处记录一下遇到过�
 
 ![image.png](https://i.loli.net/2020/10/12/IEOtmFDQ2ReKo65.png)
 ![image.png](https://i.loli.net/2020/10/12/mNwuAjlSnvULGf4.png)
+
+## 配置Gitalk
+1. 参考官方文档进行配置[Gitalk - Next主题配置](https://theme-next.js.org/docs/third-party-services/comments.html#Gitalk)
+2. Homepage URL与Authorization callback URL均为https不是http
+3. 如果github.io绑定了域名的话，Authorization callback URL为自己申请的域名。
+4. 要在线上环境才可以测试成功
+5. 测试时，第一次需要登录一遍github授权后，再刷新后即可正常使用了。
