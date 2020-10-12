@@ -123,7 +123,14 @@ git commit -m 'first commit'
 git remote add origin git@github.com:DesertsX/yulequan-relations-graph.git
 # 把本地的 gh-pages 分支推送到 origin 服务器上
 git push origin gh-pages
+
+# 切换分支命令
+git checkout <想到切换的分支>
+# 删除分支
+git branch -d <想删除的分支名称>
+
 ```
+
 注意：.travis.yml文件中，Travis CI默认部署的就是public文件夹了。
 ![image.png](https://i.loli.net/2020/10/09/nbaT2pUdDY8XjwH.png)
 
