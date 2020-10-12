@@ -253,8 +253,10 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
-  separated_meta: true
-  item_text_total: false
+  separated_meta: true        # 以分隔线显示单词计数和估计读取时间
+  item_text_total: false      # 显示单词计数和估计阅读时间的文本描述
+  awl: 404                    # 平均字长
+  wpm: 275                    # 每分钟的平均单词数
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -284,9 +286,9 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
-  enable: false
+  enable: true
   title: # Custom header, leave empty to use the default one
-  display_in_home: false
+  display_in_home: true
   params:
     maxCount: 5
     #PPMixingRate: 0.0
@@ -353,6 +355,7 @@ android_chrome_color: "#222"
 codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
+  # highlight_theme: night eighties
   theme:
     light: default
     dark: tomorrow-night
@@ -374,15 +377,15 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
-  position: top
+  position: bottom
   color: "#37c6c0"
   height: 3px
 
 # Bookmark Support
 bookmark:
-  enable: true
+  enable: false
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -480,7 +483,7 @@ yandex_site_verification:
 baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
-baidu_push: false
+baidu_push: true
 
 
 # ---------------------------------------------------------------
@@ -622,7 +625,7 @@ valine:
     # - en 
     - zh-CN 
     # Language, available values: en, zh-cn
-  visitor: true # Article reading statistic
+  visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
   recordIP: false # Whether to record the commenter IP
   enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
