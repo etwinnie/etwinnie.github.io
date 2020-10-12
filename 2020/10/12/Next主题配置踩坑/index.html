@@ -23,23 +23,28 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"8.0.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="新建文章的方法(1)通过命令新建 12hexo new &amp;#x27;title&amp;#x27; # 新建文章hexo new draft &amp;#x27;draftname&amp;#x27; #新建草稿 （2）编辑Markdown文档执行上述命令后，会在仓库文件夹下的&#x2F;source&#x2F;_posts中找到新增的Markdown文档。">
+  <meta name="description" content="git push到github后，访问主页为空白问题描述：  git push到github后，访问主页为空白 Travis CI自动部署的log中提示WARN No layout  原因：因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。 解决方案： 123456rm -rf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建博客(三) - 新建文档Markdown">
-<meta property="og:url" content="http://example.com/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/index.html">
+<meta property="og:title" content="Next主题配置踩坑">
+<meta property="og:url" content="http://example.com/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="若水的博客">
-<meta property="og:description" content="新建文章的方法(1)通过命令新建 12hexo new &amp;#x27;title&amp;#x27; # 新建文章hexo new draft &amp;#x27;draftname&amp;#x27; #新建草稿 （2）编辑Markdown文档执行上述命令后，会在仓库文件夹下的&#x2F;source&#x2F;_posts中找到新增的Markdown文档。">
+<meta property="og:description" content="git push到github后，访问主页为空白问题描述：  git push到github后，访问主页为空白 Travis CI自动部署的log中提示WARN No layout  原因：因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。 解决方案： 123456rm -rf">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-09T13:52:52.000Z">
-<meta property="article:modified_time" content="2020-10-11T09:08:33.045Z">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/12/y6eYsJk5MEx3fg9.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/12/94kdo6OqDWItGCA.png">
+<meta property="article:published_time" content="2020-10-12T17:09:13.000Z">
+<meta property="article:modified_time" content="2020-10-12T09:25:05.772Z">
 <meta property="article:author" content="若水">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="Next主题">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg">
 
 
-<link rel="canonical" href="http://example.com/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/">
+<link rel="canonical" href="http://example.com/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">
 
 
 <script class="page-configurations">
@@ -52,7 +57,7 @@
   };
 </script>
 
-  <title>hexo搭建博客(三) - 新建文档Markdown | 若水的博客</title>
+  <title>Next主题配置踩坑 | 若水的博客</title>
   
 
 
@@ -188,7 +193,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">新建文章的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown%E4%B8%AD%E5%A2%9E%E5%8A%A0%E4%BB%A3%E7%A0%81%E5%9D%97%E7%AD%89%E5%85%B6%E4%BB%96%E6%A0%87%E7%AD%BE%E5%9D%97"><span class="nav-number">1.1.</span> <span class="nav-text">Markdown中增加代码块等其他标签块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdowm%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87-%E5%9B%BE%E5%BA%8A%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">Markdowm添加图片 - 图床功能</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-push%E5%88%B0github%E5%90%8E%EF%BC%8C%E8%AE%BF%E9%97%AE%E4%B8%BB%E9%A1%B5%E4%B8%BA%E7%A9%BA%E7%99%BD"><span class="nav-number">1.</span> <span class="nav-text">git push到github后，访问主页为空白</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E6%88%90Valine%E8%AF%84%E8%AE%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">集成Valine评论问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%88%90%E5%8A%9F%E8%AF%84%E8%AE%BA%E6%A1%86%EF%BC%8C%E4%BD%86%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4"><span class="nav-number">2.1.</span> <span class="nav-text">加载成功评论框，但无法提交</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -256,7 +261,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -269,7 +274,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo搭建博客(三) - 新建文档Markdown
+          Next主题配置踩坑
         </h1>
 
         <div class="post-meta-container">
@@ -279,28 +284,22 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2020-10-09 13:52:52" itemprop="dateCreated datePublished" datetime="2020-10-09T13:52:52+00:00">2020-10-09</time>
+      <time title="创建时间：2020-10-12 17:09:13 / 修改时间：09:25:05" itemprop="dateCreated datePublished" datetime="2020-10-12T17:09:13+00:00">2020-10-12</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-10-11 09:08:33" itemprop="dateModified" datetime="2020-10-11T09:08:33+00:00">2020-10-11</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
         </span>
     </span>
 
   
-    <span id="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" class="post-meta-item leancloud_visitors" data-flag-title="hexo搭建博客(三) - 新建文档Markdown" title="阅读次数">
+    <span id="/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" class="post-meta-item leancloud_visitors" data-flag-title="Next主题配置踩坑" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -322,8 +321,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -337,22 +336,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="新建文章的方法"><a href="#新建文章的方法" class="headerlink" title="新建文章的方法"></a>新建文章的方法</h1><p>(1)通过命令新建</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&#x27;title&#x27;</span> <span class="comment"># 新建文章</span></span><br><span class="line">hexo new draft <span class="string">&#x27;draftname&#x27;</span> <span class="comment">#新建草稿</span></span><br></pre></td></tr></table></figure>
-<p>（2）编辑Markdown文档<br>执行上述命令后，会在仓库文件夹下的/source/_posts中找到新增的Markdown文档。</p>
-<a id="more"></a>
-<p>（3）生成，push</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&#x27;说明&#x27;</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="Markdown中增加代码块等其他标签块"><a href="#Markdown中增加代码块等其他标签块" class="headerlink" title="Markdown中增加代码块等其他标签块"></a>Markdown中增加代码块等其他标签块</h2><p>参考链接：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins">Hexo 标签插件（Tag Plugins）</a></p>
-<h1 id="Markdowm添加图片-图床功能"><a href="#Markdowm添加图片-图床功能" class="headerlink" title="Markdowm添加图片 - 图床功能"></a>Markdowm添加图片 - 图床功能</h1><ul>
-<li>sm.ms：免费、稳定，未来的稳定性不可控。</li>
-<li>微博图床：国内、速度不错，有点麻烦</li>
-<li>七牛云：国外，稳定，要收费</li>
-<li>imgur：老牌稳定图床，国外服务器，慢</li>
-<li>腾讯云、阿里云</li>
-<li>图床工具：Picgo</li>
+        <h2 id="git-push到github后，访问主页为空白"><a href="#git-push到github后，访问主页为空白" class="headerlink" title="git push到github后，访问主页为空白"></a>git push到github后，访问主页为空白</h2><p><strong>问题描述：</strong></p>
+<ul>
+<li>git push到github后，访问主页为空白</li>
+<li>Travis CI自动部署的log中提示WARN No layout<br><img src="https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg"></li>
 </ul>
+<p><strong>原因：</strong><br>因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -rf themes/主题文件名</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git <span class="built_in">clone</span> -b master 主题</span><br><span class="line">git地址 themes/主题文件名rm -rf themes/主题文件名/.git</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png" alt="image.png"></p>
+<blockquote>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/reboot777/p/11164193.html">文件夹因存在.git而无法提交到git的解决办法</a></p>
+</blockquote>
+<h2 id="集成Valine评论问题"><a href="#集成Valine评论问题" class="headerlink" title="集成Valine评论问题"></a>集成Valine评论问题</h2><p>Next官方文档相对来说已经比较详细了，此处记录一下遇到过的坑。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/third-party-services/comments.html#Valine">Next集成Valine评论系统</a></p>
+</blockquote>
+<h3 id="加载成功评论框，但无法提交"><a href="#加载成功评论框，但无法提交" class="headerlink" title="加载成功评论框，但无法提交"></a>加载成功评论框，但无法提交</h3><p><img src="https://i.loli.net/2020/10/12/y6eYsJk5MEx3fg9.png" alt="image.png"></p>
+<p><strong>解决方案：</strong><br>修改主题中的配置文件 _config.yml中Valine配置，增加url属性。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appId:</span> <span class="string">QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz</span> <span class="comment"># Your leancloud application appid</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">RG34boH6ebkl76PpDLsYkyp7</span> <span class="comment"># Your leancloud application appkey</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="string">https://qdfgry9p.lc-cn-n1-shared.com</span>  <span class="comment"># When the custom domain name is enabled, fill it in here</span></span><br><span class="line">  <span class="comment"># 注意此处的url填写生成appId时候的url</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment"># Comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">meta:</span> [<span class="string">nick</span>, <span class="string">mail</span>, <span class="string">link</span>] <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">lang:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">en</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">zh-CN</span> </span><br><span class="line">    <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">enableQQ:</span> <span class="literal">true</span> <span class="comment"># Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar</span></span><br><span class="line">  <span class="attr">requiredFields:</span> [] <span class="comment"># Set required fields: [nick] | [nick, mail]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/10/12/94kdo6OqDWItGCA.png" alt="image.png"></p>
 
     </div>
 
@@ -370,7 +373,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" title="hexo搭建博客(三) - 新建文档Markdown">http://example.com/2020/10/09/新建文档Markdown/</a>
+      <a href="http://example.com/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" title="Next主题配置踩坑">http://example.com/2020/10/12/Next主题配置踩坑/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -379,23 +382,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
-              <a href="/tags/blog/" rel="tag"># blog</a>
-              <a href="/tags/markdown/" rel="tag"># markdown</a>
+              <a href="/tags/Next%E4%B8%BB%E9%A2%98/" rel="tag"># Next主题</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Git/" rel="tag"># Git</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/09/hexo%E9%83%A8%E7%BD%B2%E5%88%B0git/" rel="prev" title="hexo搭建博客(二) - 部署到github">
-                  <i class="fa fa-chevron-left"></i> hexo搭建博客(二) - 部署到github
+                <a href="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" rel="prev" title="hexo搭建博客(三) - 新建文档Markdown">
+                  <i class="fa fa-chevron-left"></i> hexo搭建博客(三) - 新建文档Markdown
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/" rel="next" title="Next主题配置踩坑">
-                  Next主题配置踩坑 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -518,7 +518,7 @@ NexT.utils.loadComments('#valine-comments', () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
     new Valine(Object.assign({"enable":true,"appId":"QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz","appKey":"RG34boH6ebkl76PpDLsYkyp7","serverURLs":"https://qdfgry9p.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":["en","zh-CN"],"visitor":true,"comment_count":true,"recordIP":false,"enableQQ":true,"requiredFields":[]}, {
       el: '#valine-comments',
-      path: "/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/",
+      path: "/2020/10/12/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/",
       serverURLs: "https://qdfgry9p.lc-cn-n1-shared.com"
     }));
   }, window.Valine);
