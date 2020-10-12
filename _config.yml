@@ -8,7 +8,9 @@ subtitle: ''
 description: ''
 keywords:
 author: 若水
-language: en
+language: 
+  # - en
+  - zh-CN
 timezone: ''
 
 # URL

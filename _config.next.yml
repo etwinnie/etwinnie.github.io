@@ -196,7 +196,7 @@ chat:
 # ---------------------------------------------------------------
 
 # Show multilingual switcher in footer.
-language_switcher: 
+language_switcher: false
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -616,7 +616,7 @@ valine:
   pageSize: 10 # Pagination size
   lang: 
     - en 
-    - zh-cn 
+    - zh-CN 
     # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
@@ -631,7 +631,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
+  enable: true
   github_id: etwinnie # GitHub repo owner
   repo: blog-gitalk # Repository name to store issues
   client_id:  c5a68edb4aaaee5296f7 # GitHub Application Client ID
@@ -641,7 +641,7 @@ gitalk:
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
-  language: 
+  language: zh-CN
 
 
 

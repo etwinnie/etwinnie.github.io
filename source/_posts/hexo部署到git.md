@@ -103,7 +103,7 @@ hexo自带的主题 landscape 的 REDEME.md 文件里面有错误的标签，于
 提示说jekyll 主题不被github pages支持。可能是在git push是忽略了.deploy_git文件，该文件是被linux系统隐藏的。解决方案，修改项目的_config.yml配置，将.nojekyll添加在inclde中。
 ![image.png](https://i.loli.net/2020/10/09/UVWHZmKzXJtBk6v.png)
 
-**3. 访问用户名.github.io不显示博客页面**
+**3. 访问用户名.github.io不显示博客页面（问题一）**
 （1）添加gh-pages分支
 master分支存储代码，gh-pages分支用来存放hexo g出来的public文件夹。Travis CI即自动化部署master分支中的代码，将其生成的public文件夹部署到gh-pages分支中。
 > 参考链接：[一文教你使用GitHub Pages部署静态网页](https://zhuanlan.zhihu.com/p/69592043)
@@ -136,3 +136,24 @@ git branch -d <想删除的分支名称>
 
 （2）在仓库setting中，修改仓库的默认Github pages显示页面。
 ![image.png](https://i.loli.net/2020/10/09/Qt6JZvpImjM8seW.png)
+
+**4. 访问用户名.github.io不显示博客页面（问题一）**
+问题描述：更改主题为Next后，git push页面为空白，Travis CI提示 WARN No layout
+![](https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg)
+
+原因：主题文件夹中有.git文件，导致上传git的时候被忽略了。
+解决办法：
+
+```bash
+rm -rf themes/主题文件名
+git add .git commit -m "fix"
+git clone -b master 主题
+git地址 themes/主题文件名rm -rf themes/主题文件名/.git
+git add .git commit -m "fix"
+git push
+```
+![image.png](https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png)
+> 参考链接：[文件夹因存在.git而无法提交到git的解决办法](https://www.cnblogs.com/reboot777/p/11164193.html)
+
+
+因为这个小问题，完全清空github和本地仓库重新设置了一遍~ 
