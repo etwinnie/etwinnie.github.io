@@ -52,3 +52,4 @@ Next官方文档相对来说已经比较详细了，此处记录一下遇到过�
 3. 如果github.io绑定了域名的话，Authorization callback URL为自己申请的域名。
 4. 要在线上环境才可以测试成功
 5. 测试时，第一次需要登录一遍github授权后，再刷新后即可正常使用了。
+6. 用来存储issue的repo需要在repo设置中打开issue功能。
