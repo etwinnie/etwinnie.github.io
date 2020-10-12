@@ -13,12 +13,12 @@ categories:
 **问题描述：**
 - git push到github后，访问主页为空白
 - Travis CI自动部署的log中提示WARN No layout
-![](https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg)
+
 
 **原因：**
 因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。
 <!--more-->
-
+![](https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg)
 **解决方案：**
 
 ```bash

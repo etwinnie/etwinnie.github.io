@@ -141,8 +141,8 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+  GitHub: https://github.com/etwinnie || fab fa-github
+  E-Mail: mailto:huichen_bnu@qq.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -382,7 +382,7 @@ reading_progress:
 
 # Bookmark Support
 bookmark:
-  enable: false
+  enable: true
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -391,8 +391,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/etwinnie
   title: Follow me on GitHub
 
 
@@ -574,8 +574,12 @@ comments:
     #disqus:
     #  text: Load Disqus
     #  order: -1
-    #gitalk:
-    #  order: -2
+    valine:
+     text: Valine
+     order: -1
+    gitalk:
+     text: Gitalk
+     order: -2
 
 # Disqus
 disqus:
@@ -610,12 +614,12 @@ valine:
   appId: QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz # Your leancloud application appid
   appKey: RG34boH6ebkl76PpDLsYkyp7 # Your leancloud application appkey
   serverURLs:  https://qdfgry9p.lc-cn-n1-shared.com # When the custom domain name is enabled, fill it in here
-  placeholder: Just go go # Comment box placeholder
+  placeholder: 你有什么想说的？ # Comment box placeholder 默认评论框的内容
   avatar: mm # Gravatar style
   meta: [nick, mail, link] # Custom comment header
   pageSize: 10 # Pagination size
   lang: 
-    - en 
+    # - en 
     - zh-CN 
     # Language, available values: en, zh-cn
   visitor: true # Article reading statistic
@@ -631,7 +635,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
+  enable: true
   github_id: etwinnie # GitHub repo owner
   repo: blog-gitalk # Repository name to store issues
   client_id:  c5a68edb4aaaee5296f7 # GitHub Application Client ID
