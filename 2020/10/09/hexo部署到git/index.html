@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hexo搭建博客(二) - 部署到github | 若水的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用Travis CI自动部署Hexo参考链接：hexo部署到git 我们将会使用 Travis CI 将 Hexo 博客部署到 GitHub Pages 上。Travis CI 对于开源 repository 是免费的，但是这意味着你的站点文件将会是公开的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建博客(二) - 部署到github">
+<meta property="og:url" content="http://example.com/2020/10/09/hexo%E9%83%A8%E7%BD%B2%E5%88%B0git/index.html">
+<meta property="og:site_name" content="若水的博客">
+<meta property="og:description" content="使用Travis CI自动部署Hexo参考链接：hexo部署到git 我们将会使用 Travis CI 将 Hexo 博客部署到 GitHub Pages 上。Travis CI 对于开源 repository 是免费的，但是这意味着你的站点文件将会是公开的。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/10/10/CjdOv7ZBeFEtzgr.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/268532/1602158629415-5ed75d91-0d7c-443b-a1e5-558a86e8e6ed.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/09/3dOR6leFY2GEzTy.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/09/UVWHZmKzXJtBk6v.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/09/nbaT2pUdDY8XjwH.png">
+<meta property="og:image" content="https://i.loli.net/2020/10/09/Qt6JZvpImjM8seW.png">
+<meta property="article:published_time" content="2020-10-09T16:09:18.000Z">
+<meta property="article:modified_time" content="2020-10-12T03:06:12.669Z">
+<meta property="article:author" content="若水">
+<meta property="article:tag" content="环境搭建">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/10/10/CjdOv7ZBeFEtzgr.png">
+  
+    <link rel="alternate" href="/atom.xml" title="若水的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">若水的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo部署到git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/09/hexo%E9%83%A8%E7%BD%B2%E5%88%B0git/" class="article-date">
+  <time datetime="2020-10-09T16:09:18.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo搭建博客(二) - 部署到github
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用Travis-CI自动部署Hexo"><a href="#使用Travis-CI自动部署Hexo" class="headerlink" title="使用Travis CI自动部署Hexo"></a>使用Travis CI自动部署Hexo</h1><p>参考链接：<br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">hexo部署到git</a></p>
+<p>我们将会使用 Travis CI 将 Hexo 博客部署到 GitHub Pages 上。Travis CI 对于开源 repository 是免费的，但是这意味着你的站点文件将会是公开的。</p>
+<a id="more"></a>
+
+<ol>
+<li>新建一个 repository。如果你希望你的站点能通过 &lt;你的 GitHub 用户名&gt;.github.io 域名访问，你的 repository 应该直接命名为 &lt;你的 GitHub 用户名&gt;.github.io。</li>
+<li>将你的 Hexo 站点文件夹推送到 repository 中。默认情况下不应该 public 目录将不会被推送到 repository 中，你应该检查 .gitignore 文件中是否包含 public 一行，如果没有请加上。</li>
+<li>将 Travis CI 添加到你的 GitHub 账户中。</li>
+<li>前往 GitHub 的 Applications settings，配置 Travis CI 权限，使其能够访问你的 repository。</li>
+<li>你应该会被重定向到 Travis CI 的页面。如果没有，请 手动前往。</li>
+<li>在浏览器新建一个标签页，前往 GitHub 新建 Personal Access Token，只勾选 repo 的权限并生成一个新的 Token。Token 生成后请复制并保存好。</li>
+<li>回到 Travis CI，前往你的 repository 的设置页面，在 Environment Variables 下新建一个环境变量，Name 为 GH_TOKEN，Value 为刚才你在 GitHub 生成的 Token。确保 DISPLAY VALUE IN BUILD LOG 保持 不被勾选 避免你的 Token 泄漏。点击 Add 保存。</li>
+<li>在你的 Hexo 站点文件夹中新建一个 .travis.yml 文件：</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sudo:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="number">10</span> <span class="comment"># use nodejs v10 LTS</span></span><br><span class="line"><span class="attr">cache:</span> <span class="string">npm</span></span><br><span class="line"><span class="attr">branches:</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">master</span> <span class="comment"># build master branch only</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span> <span class="comment"># generate static files</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">provider:</span> <span class="string">pages</span></span><br><span class="line">  <span class="attr">skip-cleanup:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github-token:</span> <span class="string">$GH_TOKEN</span></span><br><span class="line">  <span class="attr">keep-history:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">on:</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="attr">local-dir:</span> <span class="string">public</span></span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>将 .travis.yml 推送到 repository 中。Travis CI 应该会自动开始运行，并将生成的文件推送到同一 repository 下的 gh-pages 分支下</li>
+<li>在 GitHub 中前往你的 repository 的设置页面，修改 GitHub Pages 的部署分支为 gh-pages。</li>
+<li>前往 https://&lt;你的 GitHub 用户名&gt;.github.io 查看你的站点是否可以访问。这可能需要一些时间。</li>
+</ol>
+<h1 id="将本地仓库推送到github-io"><a href="#将本地仓库推送到github-io" class="headerlink" title="将本地仓库推送到github.io"></a>将本地仓库推送到github.io</h1><h2 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;定位到本地站点文件夹&gt;     <span class="comment">#定位到本地文件夹</span></span><br><span class="line"><span class="built_in">pwd</span>                     <span class="comment">#查看当前文件夹位置</span></span><br><span class="line">git init        <span class="comment">#初始化，将文件夹变成Git可管理的仓库</span></span><br><span class="line">git add .       <span class="comment">#将所有文件提交到暂存区，由于是第一次提交，需要将所有文件都进行提交，如果一个一个的提交太麻烦，通过. 命令可以将所有文件都进行提交。</span></span><br><span class="line">git commit -m <span class="string">&#x27;the initial edition&#x27;</span> <span class="comment">#提交到版本库</span></span><br><span class="line">git remote add origin https://github.com/etwinnie/etwinnie.github.io.git <span class="comment">#将本地仓库与Github仓库关联</span></span><br></pre></td></tr></table></figure>
+<p>Github仓库地址，在即为刚刚新建的Github仓库地址，可在此处找到</p>
+<p><img src="https://i.loli.net/2020/10/10/CjdOv7ZBeFEtzgr.png" alt="image.png"></p>
+<h2 id="github推送"><a href="#github推送" class="headerlink" title="github推送"></a>github推送</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin master <span class="comment"># 第一次推送，要与云端仓库合并</span></span><br><span class="line">git push -u origin master <span class="comment">#进行推送，-u指将master分支全部推送</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定期维护</span></span><br><span class="line">git add -A               <span class="comment">#将文件的修改上传到暂存区</span></span><br><span class="line">git commit -m <span class="string">&#x27;说明&#x27;</span>      <span class="comment">#提交到本地仓库</span></span><br><span class="line">git push origin master   <span class="comment">#推送到GitHub网站上</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><h4 id="源引用表达式-master-没有匹配-gt"><a href="#源引用表达式-master-没有匹配-gt" class="headerlink" title="源引用表达式 master 没有匹配&gt;"></a>源引用表达式 master 没有匹配&gt;</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin master    <span class="comment">#源引用表达式 master 没有匹配</span></span><br><span class="line"></span><br><span class="line">$ git push --set-upstream origin master    <span class="comment">#当前分支 master 没有对应的上游分支</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/268532/1602158629415-5ed75d91-0d7c-443b-a1e5-558a86e8e6ed.png" alt="image.png"></p>
+<h4 id="有些文件没有被提交到github"><a href="#有些文件没有被提交到github" class="headerlink" title="有些文件没有被提交到github"></a>有些文件没有被提交到github</h4><p>查看一下本地仓库的.gitignore文件中，是否设置对应被忽略的文件夹。<br>public文件夹一般情况下不会同步上传到github，它是生成的html静态文件。</p>
+<h4 id="完成本地仓库推送后报错"><a href="#完成本地仓库推送后报错" class="headerlink" title="完成本地仓库推送后报错 -"></a>完成本地仓库推送后报错 -</h4><p><img src="https://i.loli.net/2020/10/09/3dOR6leFY2GEzTy.png" alt="image.png"></p>
+<blockquote>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/LSH_Blog/article/details/105208743">hexo部署记录及采坑经验</a></p>
+</blockquote>
+<p><strong>1. 邮箱提示：Page build failure</strong><br>hexo自带的主题 landscape 的 REDEME.md 文件里面有错误的标签，于是直接删除掉了这个 README 文件。</p>
+<p><strong>2. 删除后邮箱提示：Page build warning</strong><br>提示说jekyll 主题不被github pages支持。可能是在git push是忽略了.deploy_git文件，该文件是被linux系统隐藏的。解决方案，修改项目的_config.yml配置，将.nojekyll添加在inclde中。<br><img src="https://i.loli.net/2020/10/09/UVWHZmKzXJtBk6v.png" alt="image.png"></p>
+<p><strong>3. 访问用户名.github.io不显示博客页面</strong><br>（1）添加gh-pages分支<br>master分支存储代码，gh-pages分支用来存放hexo g出来的public文件夹。Travis CI即自动化部署master分支中的代码，将其生成的public文件夹部署到gh-pages分支中。</p>
+<blockquote>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/69592043">一文教你使用GitHub Pages部署静态网页</a></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支和远程分支，仓库默认在 master 分支</span></span><br><span class="line">git branch -a</span><br><span class="line"><span class="comment"># 新建并切换到 gh-pages 分支</span></span><br><span class="line">git checkout -b gh-pages</span><br><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 提交暂存区到仓库区，并添加代码提交信息</span></span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加远程仓库</span></span><br><span class="line">git remote add origin git@github.com:DesertsX/yulequan-relations-graph.git</span><br><span class="line"><span class="comment"># 把本地的 gh-pages 分支推送到 origin 服务器上</span></span><br><span class="line">git push origin gh-pages</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换分支命令</span></span><br><span class="line">git checkout &lt;想到切换的分支&gt;</span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d &lt;想删除的分支名称&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意：.travis.yml文件中，Travis CI默认部署的就是public文件夹了。<br><img src="https://i.loli.net/2020/10/09/nbaT2pUdDY8XjwH.png" alt="image.png"></p>
+<p>（2）在仓库setting中，修改仓库的默认Github pages显示页面。<br><img src="https://i.loli.net/2020/10/09/Qt6JZvpImjM8seW.png" alt="image.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/09/hexo%E9%83%A8%E7%BD%B2%E5%88%B0git/" data-id="ckg5w884o0001re1qd34qbq01" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag">环境搭建</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/10/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo搭建博客(三) - 新建文档Markdown</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/">网站部署</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travis-IC/" rel="tag">Travis IC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/demo/" rel="tag">demo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" rel="tag">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Travis-IC/" style="font-size: 10px;">Travis IC</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="font-size: 15px;">环境搭建</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 10px;">网站</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/09/hexo%E9%83%A8%E7%BD%B2%E5%88%B0git/">hexo搭建博客(二) - 部署到github</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/09/%E6%96%B0%E5%BB%BA%E6%96%87%E6%A1%A3Markdown/">hexo搭建博客(三) - 新建文档Markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/09/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo搭建博客(一) - 环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/09/%E6%88%90%E5%8A%9F%E8%AE%BF%E9%97%AE%E4%BA%86%E3%80%82/">成功访问了</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 若水<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
