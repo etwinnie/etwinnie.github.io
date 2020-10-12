@@ -3,10 +3,10 @@ title: Next主题配置踩坑
 date: 2020-10-12 17:09:13
 tags:
     - Next主题
-    - Hexo
+    - hexo
     - Git
 categories:
-    - Hexo
+    - hexo
 ---
 
 ## git push到github后，访问主页为空白
@@ -17,6 +17,7 @@ categories:
 
 **原因：**
 因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。
+<!--more-->
 
 **解决方案：**
 
@@ -38,33 +39,9 @@ Next官方文档相对来说已经比较详细了，此处记录一下遇到过�
 > [Next集成Valine评论系统](https://theme-next.js.org/docs/third-party-services/comments.html#Valine)
 ### 加载成功评论框，但无法提交
 ![image.png](https://i.loli.net/2020/10/12/y6eYsJk5MEx3fg9.png)
-
+![image.png](https://i.loli.net/2020/10/12/1mcGCaKFXI93lQf.png)
 **解决方案：**
 修改主题中的配置文件 _config.yml中Valine配置，增加url属性。
 
-```yaml
-# Valine
-# For more information: https://valine.js.org, https://github.com/xCss/Valine
-valine:
-  enable: true
-  appId: QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz # Your leancloud application appid
-  appKey: RG34boH6ebkl76PpDLsYkyp7 # Your leancloud application appkey
-  serverURLs: https://qdfgry9p.lc-cn-n1-shared.com  # When the custom domain name is enabled, fill it in here
-  # 注意此处的url填写生成appId时候的url
-  placeholder: Just go go # Comment box placeholder
-  avatar: mm # Gravatar style
-  meta: [nick, mail, link] # Custom comment header
-  pageSize: 10 # Pagination size
-  lang: 
-    - en 
-    - zh-CN 
-    # Language, available values: en, zh-cn
-  visitor: true # Article reading statistic
-  comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
-  enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
-  requiredFields: [] # Set required fields: [nick] | [nick, mail]
-
-```
-![image.png](https://i.loli.net/2020/10/12/94kdo6OqDWItGCA.png)
-
+![image.png](https://i.loli.net/2020/10/12/IEOtmFDQ2ReKo65.png)
+![image.png](https://i.loli.net/2020/10/12/mNwuAjlSnvULGf4.png)
