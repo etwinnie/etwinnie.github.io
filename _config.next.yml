@@ -609,7 +609,7 @@ valine:
   enable: true
   appId: QDFGRy9PoFjzc6WqYi1aMvLw-gzGzoHsz # Your leancloud application appid
   appKey: RG34boH6ebkl76PpDLsYkyp7 # Your leancloud application appkey
-  serverURLs: # When the custom domain name is enabled, fill it in here
+  serverURLs:  https://etwinnie.github.io/ # When the custom domain name is enabled, fill it in here
   placeholder: Just go go # Comment box placeholder
   avatar: mm # Gravatar style
   meta: [nick, mail, link] # Custom comment header
