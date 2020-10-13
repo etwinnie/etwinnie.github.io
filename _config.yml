@@ -110,10 +110,10 @@ deploy:
 
 # Post Wordcount
 symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
+  symbols: true # 是否启用
+  time: true  # 估计阅读时间
+  total_symbols: true # 页脚部分中所有帖子字数
+  total_time: true  # 页脚部分中所有帖子的估计阅读时间
 
 # SEO 
 sitemap: 

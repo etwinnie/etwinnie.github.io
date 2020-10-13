@@ -38,8 +38,8 @@ custom_file_path:
 # Schemes
 # scheme: Muse
 #scheme: Mist
-scheme: Pisces
-#scheme: Gemini
+# scheme: Pisces
+scheme: Gemini
 
 # Dark Mode
 darkmode: true
@@ -125,13 +125,14 @@ sidebar:
   offset: 12
 
 # Sidebar Avatar
+# 左边栏头像设置
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/avatar.png   #/images/avatar.gif
   # If true, the avatar will be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -143,6 +144,7 @@ site_state: true
 social:
   GitHub: https://github.com/etwinnie || fab fa-github
   E-Mail: mailto:huichen_bnu@qq.com || fa fa-envelope
+  RSS: /atom.xml || fa fa-rss
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -154,10 +156,11 @@ social:
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
+# 左边栏链接
 links_settings:
   icon: fa fa-globe
   title: Links
@@ -165,7 +168,9 @@ links_settings:
   layout: block
 
 links:
-  #Title: https://example.com
+  GitHub: https://github.com/
+  Hexo: https://hexo.io/zh-cn/docs/
+  Next: https://theme-next.js.org/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -281,7 +286,7 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  #RSS: /atom.xml || fa fa-rss
+  RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -355,7 +360,7 @@ android_chrome_color: "#222"
 codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
-  # highlight_theme: night eighties
+  highlight_theme: night #eighties
   theme:
     light: default
     dark: tomorrow-night
@@ -844,6 +849,7 @@ nprogress:
 
 # Canvas ribbon
 # For more information: https://github.com/hustcc/ribbon.js
+# 网站背景
 canvas_ribbon:
   enable: false
   size: 300 # The width of the ribbon
