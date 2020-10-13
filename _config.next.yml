@@ -42,7 +42,7 @@ custom_file_path:
 scheme: Gemini
 
 # Dark Mode
-darkmode: true
+darkmode: false
 
 
 # ---------------------------------------------------------------
@@ -286,7 +286,7 @@ follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
   #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-  RSS: /atom.xml || fa fa-rss
+  # RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
@@ -360,7 +360,7 @@ android_chrome_color: "#222"
 codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
-  highlight_theme: night #eighties
+  # highlight_theme: default #eighties  #night 
   theme:
     light: default
     dark: tomorrow-night
@@ -531,6 +531,7 @@ mediumzoom: false
 
 # Vanilla JavaScript plugin for lazyloading images.
 # For more information: https://github.com/ApoorvSaxena/lozad.js
+# 用于图片快速加载设置
 lazyload: false
 
 # Pangu Support

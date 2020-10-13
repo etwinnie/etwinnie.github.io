@@ -21,10 +21,10 @@ category:
 <!--more-->
 ### 查看是否安装成功Node.js与Git
 ```
-> $ node -v
-> v13.8.0
-> $ git version
-> git version 2.25.0
+$ node -v
+v13.8.0
+$ git version
+git version 2.25.0
 ```
 
 ### Git安装（Mac系统）

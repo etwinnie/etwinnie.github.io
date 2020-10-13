@@ -13,8 +13,8 @@ category:
 # 新建文章的方法
 (1)通过命令新建
 ```bash
-hexo new 'title' # 新建文章
-hexo new draft 'draftname' #新建草稿
+$ hexo new 'title' # 新建文章
+$ hexo new draft 'draftname' #新建草稿
 ```
 （2）编辑Markdown文档
 执行上述命令后，会在仓库文件夹下的/source/_posts中找到新增的Markdown文档。
@@ -22,11 +22,11 @@ hexo new draft 'draftname' #新建草稿
 （3）生成，push
 
 ```bash
-hexo g
-hexo s
-git add -A
-git commit -m '说明'
-git push origin master
+$ hexo g
+$ hexo s
+$ git add -A
+$ git commit -m '说明'
+$ git push origin master
 ```
 
 ## Markdown中增加代码块等其他标签块

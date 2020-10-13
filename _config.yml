@@ -46,15 +46,16 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+# highlight与prismjs开启一个即可，然后在主题config中修改具体配置
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -102,9 +103,11 @@ ignore:
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: next
+plugin: 
+  - hexo-generator-feed
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
+## Docs: https://hexo.io/docsƒ/one-command-deployment
 deploy:
   type: ''
 

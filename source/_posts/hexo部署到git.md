@@ -53,10 +53,10 @@ deploy:
 # 将本地仓库推送到github.io
 ## 初始化本地仓库
 ```bash
-cd <定位到本地站点文件夹>     #定位到本地文件夹
-pwd                     #查看当前文件夹位置
-git init        #初始化，将文件夹变成Git可管理的仓库
-git add .       #将所有文件提交到暂存区，由于是第一次提交，需要将所有文件都进行提交，如果一个一个的提交太麻烦，通过. 命令可以将所有文件都进行提交。
+$ cd <定位到本地站点文件夹>     #定位到本地文件夹
+$ pwd                     #查看当前文件夹位置
+$ git init        #初始化，将文件夹变成Git可管理的仓库
+$ git add .       #将所有文件提交到暂存区，由于是第一次提交，需要将所有文件都进行提交，如果一个一个的提交太麻烦，通过. 命令可以将所有文件都进行提交。
 git commit -m 'the initial edition' #提交到版本库
 git remote add origin https://github.com/etwinnie/etwinnie.github.io.git #将本地仓库与Github仓库关联
 ```
@@ -66,15 +66,15 @@ Github仓库地址，在即为刚刚新建的Github仓库地址，可在此处�
 
 ## github推送
 ```bash
-git pull --rebase origin master # 第一次推送，要与云端仓库合并
-git push -u origin master #进行推送，-u指将master分支全部推送
+$ git pull --rebase origin master # 第一次推送，要与云端仓库合并
+$ git push -u origin master #进行推送，-u指将master分支全部推送
 ```
 
 ```bash
 #定期维护
-git add -A               #将文件的修改上传到暂存区
-git commit -m '说明'      #提交到本地仓库
-git push origin master   #推送到GitHub网站上
+$ git add -A               #将文件的修改上传到暂存区
+$ git commit -m '说明'      #提交到本地仓库
+$ git push origin master   #推送到GitHub网站上
 ```
 
 ### 可能出现的问题
@@ -110,24 +110,24 @@ master分支存储代码，gh-pages分支用来存放hexo g出来的public文件
 
 ```bash
 # 列出所有本地分支和远程分支，仓库默认在 master 分支
-git branch -a
+$ git branch -a
 # 新建并切换到 gh-pages 分支
-git checkout -b gh-pages
+$ git checkout -b gh-pages
 # 显示有变更的文件
-git status
-git add .
+$ git status
+$ git add .
 # 提交暂存区到仓库区，并添加代码提交信息
-git commit -m 'first commit'
+$ git commit -m 'first commit'
 
 # 添加远程仓库
-git remote add origin git@github.com:DesertsX/yulequan-relations-graph.git
+$ git remote add origin git@github.com:DesertsX/yulequan-relations-graph.git
 # 把本地的 gh-pages 分支推送到 origin 服务器上
-git push origin gh-pages
+$ git push origin gh-pages
 
 # 切换分支命令
-git checkout <想到切换的分支>
+$ git checkout <想到切换的分支>
 # 删除分支
-git branch -d <想删除的分支名称>
+$ git branch -d <想删除的分支名称>
 
 ```
 
@@ -145,12 +145,12 @@ git branch -d <想删除的分支名称>
 解决办法：
 
 ```bash
-rm -rf themes/主题文件名
-git add .git commit -m "fix"
-git clone -b master 主题
-git地址 themes/主题文件名rm -rf themes/主题文件名/.git
-git add .git commit -m "fix"
-git push
+$ rm -rf themes/主题文件名
+$ git add .git commit -m "fix"
+$ git clone -b master 主题
+$ git地址 themes/主题文件名rm -rf themes/主题文件名/.git
+$ git add .git commit -m "fix"
+$ git push
 ```
 ![image.png](https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png)
 > 参考链接：[文件夹因存在.git而无法提交到git的解决办法](https://www.cnblogs.com/reboot777/p/11164193.html)
