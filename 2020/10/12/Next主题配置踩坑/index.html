@@ -364,7 +364,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>711</span>
+      <span>685</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -390,7 +390,12 @@
 <p><strong>原因：</strong><br>因为这个问题，清空了一遍github和本地仓库，折腾了大半天。最后发现是因为next主题也是一个repo，下载的next主题中有.git文件，导致上传git的时候被忽略了。</p>
 <a id="more"></a>
 <p><img src="https://pic1.zhimg.com/v2-ce360b5ee451fcd9ad24d6b10935dde8_b.jpg"><br><strong>解决方案：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm -rf themes/主题文件名</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git <span class="built_in">clone</span> -b master 主题</span><br><span class="line">git地址 themes/主题文件名rm -rf themes/主题文件名/.git</span><br><span class="line">git add .git commit -m <span class="string">&quot;fix&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rm</span> -rf themes/主题文件名
+<span class="token function">git</span> <span class="token function">add</span> .git commit -m <span class="token string">"fix"</span>
+<span class="token function">git</span> clone -b master 主题
+git地址 themes/主题文件名rm -rf themes/主题文件名/.git
+<span class="token function">git</span> <span class="token function">add</span> .git commit -m <span class="token string">"fix"</span>
+<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2020/10/12/O5zsnLMTBbmAC4l.png" alt="image.png"></p>
 <blockquote>
 <p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/reboot777/p/11164193.html">文件夹因存在.git而无法提交到git的解决办法</a></p>
@@ -425,10 +430,10 @@
       <div class="popular-posts-title"><a href="/2020/10/09/hexo搭建博客/" rel="bookmark">hexo搭建博客(一) - 环境搭建</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/10/09/hexo部署到git/" rel="bookmark">hexo搭建博客(二) - 部署到github</a></div>
+      <div class="popular-posts-title"><a href="/2020/10/09/成功访问了。/" rel="bookmark">成功访问了</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2020/10/09/成功访问了。/" rel="bookmark">成功访问了</a></div>
+      <div class="popular-posts-title"><a href="/2020/10/09/hexo部署到git/" rel="bookmark">hexo搭建博客(二) - 部署到github</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2020/10/09/新建文档Markdown/" rel="bookmark">hexo搭建博客(三) - 新建文档Markdown</a></div>
@@ -453,25 +458,6 @@
   </li>
 </ul>
 </div>
-
-          
-
-  <div class="followme">
-    <span>欢迎关注我的其它发布渠道</span>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
-  </div>
 
           <div class="post-tags">
               <a href="/tags/Next%E4%B8%BB%E9%A2%98/" rel="tag"># Next主题</a>
@@ -566,7 +552,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6 分钟</span>
+    <span title="站点阅读时长">5 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
