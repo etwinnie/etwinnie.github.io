@@ -57,8 +57,8 @@ $ cd <定位到本地站点文件夹>     #定位到本地文件夹
 $ pwd                     #查看当前文件夹位置
 $ git init        #初始化，将文件夹变成Git可管理的仓库
 $ git add .       #将所有文件提交到暂存区，由于是第一次提交，需要将所有文件都进行提交，如果一个一个的提交太麻烦，通过. 命令可以将所有文件都进行提交。
-git commit -m 'the initial edition' #提交到版本库
-git remote add origin https://github.com/etwinnie/etwinnie.github.io.git #将本地仓库与Github仓库关联
+$ git commit -m 'the initial edition' #提交到版本库
+$ git remote add origin https://github.com/etwinnie/etwinnie.github.io.git #将本地仓库与Github仓库关联
 ```
 Github仓库地址，在即为刚刚新建的Github仓库地址，可在此处找到
 

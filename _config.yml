@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 若水的博客
+title: etwinnie's blog
 subtitle: ''
 description: ''
 keywords:
-author: 若水
+author: etwinnie
 language: 
   # - en
   - zh-CN
@@ -102,7 +102,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: next
+theme: landscape
 plugin: 
   - hexo-generator-feed
 
