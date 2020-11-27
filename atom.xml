@@ -6,7 +6,7 @@
   <link href="https://etwinnie.github.io/atom.xml" rel="self"/>
   
   <link href="https://etwinnie.github.io/"/>
-  <updated>2020-10-12T14:48:59.354Z</updated>
+  <updated>2020-11-27T05:58:17.300Z</updated>
   <id>https://etwinnie.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客-音视频插入</title>
+    <link href="https://etwinnie.github.io/2020/11/27/Hexo%E5%8D%9A%E5%AE%A2-%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8F%92%E5%85%A5/"/>
+    <id>https://etwinnie.github.io/2020/11/27/Hexo%E5%8D%9A%E5%AE%A2-%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8F%92%E5%85%A5/</id>
+    <published>2020-11-27T05:35:30.000Z</published>
+    <updated>2020-11-27T05:58:17.300Z</updated>
+    
+    <content type="html"><![CDATA[<p>测试在hexo-Next主题博客中插入音视频。</p><p>测试1：插入网易云音乐音频</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=544247584&auto=1&height=66"></iframe><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=544247584&auto=1&height=32"></iframe><p>测试2：插入B站视频</p><iframe src="//player.bilibili.com/player.html?aid=79959820&bvid=BV1zJ411x7k8&cid=136846978&page=4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><p>测试3：使用Audio标签 + 网盘进行上传<br><audio src="http://box.yungu.org/f/21bfdbeb3dea48f4a921/?dl=1" controls="" preload="metadata"></audio></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;测试在hexo-Next主题博客中插入音视频。&lt;/p&gt;
+&lt;p&gt;测试1：插入网易云音乐音频&lt;/p&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Next主题配置踩坑</title>
